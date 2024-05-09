@@ -6,6 +6,11 @@ struct Address
     char city[10];
 };
 
+typedef struct{
+    int date;
+    int month;
+    int year;
+}MyDate;
 
 struct Employee
 {
@@ -14,6 +19,7 @@ struct Employee
    float empSalary;
 
    struct Address add;
+   MyDate joinDate;
 
 };
 int main(){
@@ -33,6 +39,15 @@ int main(){
 
     printf("enter Emp city : ");
     scanf("%s",&e1[i].add.city);
+
+    printf("enter Emp date : ");
+    scanf("%d",&e1[i].joinDate.date);
+
+    printf("enter Emp month : ");
+    scanf("%d",&e1[i].joinDate.month);
+
+    printf("enter Emp year : ");
+    scanf("%d",&e1[i].joinDate.year);
     }
 
     for(int i=0;i<2;i++){
@@ -40,7 +55,8 @@ int main(){
         printf("Emp Name %s\n",e1[i].empName);
         printf("Emp Salary %.2f\n",e1[i].empSalary);
         printf("Emp Id %d\n",e1[i].add.pin);
-        printf("Emp Id %s\n",e1[i].add.city);
+        printf("Emp city %s\n",e1[i].add.city);
+        printf("Emp join date : %d/%d/%d\n",e1[i].joinDate.date,e1[i].joinDate.month,e1[i].joinDate.year);
     }
     
 
